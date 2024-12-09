@@ -14,7 +14,7 @@ export class AppComponent {
   currentIconPath = 'images/regalo.png';
   finishGiftIconPath = 'images/autocaravana.png';
   init = false;
-  finish = true;
+  finish = false;
   private iconNames = ICON_NAMES;
 
   private randomInRange(min: number, max: number): number {
