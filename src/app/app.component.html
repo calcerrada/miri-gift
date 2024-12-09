@@ -1,9 +1,118 @@
+<div class="app">
+  @if (!finish) {
+  <div class="intro">
+    <h1 class="title">Vale Por Una Experiencia Sorpresa</h1>
 
-<div id="app">
-    <div class="intro">
-      <h1>Vale Por Una Experiencia Sorpresa</h1>
-      <h3> Haz click para ver la sorpresa</h3>
+    <div
+      class="icons"
+      tabindex="0"
+      (click)="getSurprise()"
+      (keyup.enter)="getSurprise()"
+    >
+      <img
+        [src]="currentIconPath"
+        class="icon"
+        alt="iconos de regalo"
+        [class.zoom-in-out]="!init || finish"
+      />
     </div>
-    <div class="fireworks-container"></div>
+    @if(!init){
+    <h3>Pulsa en el regalo</h3>
+    }
   </div>
-  <div class="sky"></div>
+  } @else {
+  <div class="intro">
+    <h1 class="title">Enhorabuena has ganado un viaje en Autocaravana</h1>
+
+    <div
+      class="icons"
+      tabindex="0"
+      (click)="getSurprise()"
+      (keyup.enter)="getSurprise()"
+    >
+      <img
+        [src]="finishGiftIconPath"
+        class="icon"
+        alt="iconos de regalo"
+        [class.zoom-in-out]="!init || finish"
+      />
+    </div>
+    <p>Desliza para ver los detalles de tu regalo</p>
+  </div>
+  <div class="details">
+    <p>
+      Felicides!! prodras vivir una aventura viajando unos dias en una
+      autocaravana junto a a mejor compañia posible ( Akira )
+    </p>
+    <p>Este regalo Incluye:</p>
+    <ul>
+      <li><a href="#transporte">Alojamiento y transporte</a></li>
+      <li><a href="#chofer">Chofer Privado</a></li>
+      <li><a href="#chef">Prestigioso Cocinero</a></li>
+      <li><a href="#guia">Guía turístico</a></li>
+    </ul>
+    <div id="transporte" class="section">
+      <h3>Alojamiento y Transporte</h3>
+      <p>
+        Tu hogar y método de transporte será una bonita y acogedora
+        autocaravana, con la que podrás viajar con total libertad y sin
+        renunciar a las comodidades del hogar.
+      </p>
+      <p>
+        Más detalles
+        <a href="https://www.yescapa.es/campers/62856" target="_blank">aquí</a>
+      </p>
+    </div>
+    <div id="chofer" class="section">
+      <h3>Chofer Privado</h3>
+      <p>
+        Despreocúpate de los desplazamientos, ponemos a tu disposición a uno de
+        los más conocidos conductores de caravanas de la comunidad Camper
+      </p>
+      <p>
+        Con aún los 12 puntos en su poder, es famoso por solo haber reventado
+        una caravana en sus inicios. Eso sí estate atenta cuando dé marcha atrás
+      </p>
+    </div>
+    <div id="chef" class="section">
+      <h3>Prestigioso Cocinero</h3>
+      <p>
+        Somos conscientes de que querrás probar la gastronomía de los sitios que
+        visitáis, pero para aquellos momentos en los que,  por pereza o
+        simplemente por disfrutar de la tranquilidad de la caravana, no queráis
+        comer fuera, ponemos a su disposición uno de los más aclamados chef de
+        cocina del país
+      </p>
+      <p>
+        Con más de 12.000 horas de visionado de programas de cocina, es capaz de
+        amoldarse a sus refinados gustos y apetencias
+      </p>
+    </div>
+    <div id="guia" class="section">
+      <h3>Chofer Privado</h3>
+      <p>
+        Despreocúpate de los desplazamientos, ponemos a tu disposición a uno de
+        los más conocidos conductores de caravanas de la comunidad Camper
+      </p>
+      <p>
+        Con aún los 12 puntos en su poder, es famoso por solo haber reventado
+        una caravana en sus inicios. Eso sí estate atenta cuando dé marcha atrás
+      </p>
+    </div>
+    <div id="chef" class="section">
+      <h3>Guía turístico</h3>
+      <p>
+        Para que tu viaje, además de  divertido y relajante, sea didáctico,
+        ponemos a su servicio a nuestro mejor guía turístico.
+      </p>
+      <p>
+        Hijo de Félix Rodríguez De la fuente y Lonely planet, este guía combina
+        su pasión por la naturaleza y su profundo conocimiento del patrimonio
+        cultural para llevarte a experiencias inolvidables.
+      </p>
+    </div>
+  </div>
+  }
+
+  <!-- <div>Iconos diseñados por <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.es/" title="Flaticon">www.flaticon.es</a></div> -->
+</div>
