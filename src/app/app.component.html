@@ -18,6 +18,8 @@
     </div>
     @if(!init){
     <h3>Pulsa en el regalo</h3>
+    } @else {
+      <h3>La suerte esta hechada..</h3>
     }
   </div>
   } @else {
@@ -37,7 +39,7 @@
         [class.zoom-in-out]="!init || finish"
       />
     </div>
-    <p>Desliza para ver los detalles de tu regalo</p>
+    <h3>Desliza para mas detalles</h3>
   </div>
   <div class="details">
     <p>
@@ -47,11 +49,11 @@
     </p>
     <p>Este regalo Incluye:</p>
     <ul>
-      <li><a href="#transporte">Alojamiento y transporte</a></li>
-      <li><a href="#chofer">Chofer Privado</a></li>
-      <li><a href="#chef">Prestigioso Cocinero</a></li>
-      <li><a href="#guia">Guía turístico</a></li>
-      <li><a href="#destino">El destino perfecto</a></li>
+      <li>✔ <a href="#transporte">Alojamiento y transporte</a></li>
+      <li>✔ <a href="#chofer">Chofer Privado</a></li>
+      <li>✔ <a href="#chef">Prestigioso Cocinero</a></li>
+      <li>✔ <a href="#guia">Guía turístico</a></li>
+      <li>✔ <a href="#destino">El destino perfecto</a></li>
     </ul>
     <div id="transporte" class="section">
       <h3>Alojamiento y Transporte</h3>
@@ -62,7 +64,7 @@
       </p>
       <p>
         Más detalles
-        <a href="https://www.yescapa.es/campers/62856" target="_blank">aquí</a>
+        <a href="https://www.yescapa.es/campers/62856?more=photos" target="_blank">aquí</a>
       </p>
     </div>
     <div id="chofer" class="section">
