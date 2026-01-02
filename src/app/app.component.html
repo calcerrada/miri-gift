@@ -1,155 +1,31 @@
 <div class="app">
-  @if (!finish) {
-  <div class="intro">
-    <h1 class="title">Vale Por Una Experiencia Sorpresa</h1>
-
-    <div
-      class="icons"
-      tabindex="0"
-      (click)="getSurprise()"
-      (keyup.enter)="getSurprise()"
-    >
-      <img
-        [src]="currentIconPath"
-        class="icon"
-        alt="iconos de regalo"
-        [class.zoom-in-out]="!init || finish"
-      />
-    </div>
-    @if(!init){
-    <h3>Pulsa en el regalo</h3>
-    } @else {
-      <h3>La suerte esta hechada..</h3>
-    }
-  </div>
-  } @else {
-  <div class="intro">
-    <h1 class="title">Enhorabuena has ganado un viaje en Autocaravana</h1>
-
-    <div
-      class="icons"
-      tabindex="0"
-      (click)="getSurprise()"
-      (keyup.enter)="getSurprise()"
-    >
-      <img
-        [src]="finishGiftIconPath"
-        class="icon"
-        alt="iconos de regalo"
-        [class.zoom-in-out]="!init || finish"
-      />
-    </div>
-    <h3>Desliza para mas detalles</h3>
-  </div>
-  <div class="details">
-    <p>
-      Felicidades!! Estás a punto de embarcarte en una aventura épica sobre
-      ruedas, y lo mejor de todo lo harás junto a la mejor compañia posible...
-      Akira
-    </p>
-    <p>Este regalo Incluye:</p>
-    <ul>
-      <li>✔ <a href="#transporte">Alojamiento y transporte</a></li>
-      <li>✔ <a href="#chofer">Chofer Privado</a></li>
-      <li>✔ <a href="#chef">Prestigioso Cocinero</a></li>
-      <li>✔ <a href="#guia">Guía turístico</a></li>
-      <li>✔ <a href="#destino">El destino perfecto</a></li>
+  <header>
+    <div><span>HöR</span><span class="joke">No</span></div>
+    <div><span class="material-icons"> dehaze </span></div>
+  </header>
+  <div class="countdown-timer">
+    <ul class="countdown-timer-ul orbitron-font">
+      <p class="deadline-label">
+        <span>{{ date | date : 'MMM d, y' }}</span>
+      </p>
+      <div class="countainer-ul">
+        <li class="date-item">
+          <span class="days">{{ days }}</span
+          >D
+        </li>
+        <li class="date-item">
+          <span class="hours">{{ hours }}</span
+          >H
+        </li>
+        <li class="date-item">
+          <span class="minutes">{{ minutes }}</span
+          >M
+        </li>
+        <li class="date-item">
+          <span class="seconds">{{ seconds }}</span
+          >S
+        </li>
+      </div>
     </ul>
-    <div id="transporte" class="section">
-      <h3>Alojamiento y Transporte</h3>
-      <p>
-        Tu hogar y método de transporte será una bonita y acogedora
-        autocaravana, con la que podrás viajar con total libertad y sin
-        renunciar a las comodidades del hogar.
-      </p>
-      <p>
-        Más detalles
-        <a href="https://www.yescapa.es/campers/62856?more=photos" target="_blank">aquí</a>
-      </p>
-    </div>
-    <div id="chofer" class="section">
-      <h3>Chofer Privado</h3>
-      <p>
-        Despreocúpate de los desplazamientos, tendrás a tu disposición a uno de
-        los más conocidos conductores de caravanas de la comunidad Camper
-      </p>
-      <p>
-        Con aún los 12 puntos en su poder, es famoso por solo haber reventado
-        una caravana en sus inicios. Eso sí estate atenta cuando dé marcha atrás
-      </p>
-    </div>
-    <div id="chef" class="section">
-      <h3>Prestigioso Cocinero</h3>
-      <p>
-        Saeguro querrás saborear la gastronomía local allá donde vayas, pero
-        para esos días en los que la pereza gana o simplemente te apetece
-        disfrutar de la calma de la caravana, tenemos la solución perfecta: ¡Un
-        chef de primera a tu disposición!
-      </p>
-      <p>
-        Con más de 12.000 horas de visionado de programas de cocina, tiene el
-        talento y la flexibilidad para adaptarse a tus gustos más refinados y
-        caprichos culinarios
-      </p>
-    </div>
-    <div id="guia" class="section">
-      <h3>Chofer Privado</h3>
-      <p>
-        Despreocúpate de los desplazamientos, ponemos a tu disposición a uno de
-        los más conocidos conductores de caravanas de la comunidad Camper
-      </p>
-      <p>
-        Con los 12 puntos del carné aún intactos, es famoso por haber destrozado
-        solo una caravana en su historia. Eso sí, mantente alerta cuando dé
-        marcha atrás
-      </p>
-    </div>
-    <div id="chef" class="section">
-      <h3>Guía turístico</h3>
-      <p>
-        Para que tu viaje, además de  divertido y relajante, sea didáctico,
-        ponemos a su servicio a nuestro mejor guía turístico.
-      </p>
-      <p>
-        Hijo de Félix Rodríguez De la fuente y Lonely planet, este guía combina
-        su pasión por la naturaleza y su profundo conocimiento del patrimonio
-        cultural para llevarte a experiencias inolvidables.
-      </p>
-    </div>
-    <div id="destino" class="section">
-      <h3>El destino lo pones tú</h3>
-      <p>
-        Como ya sabemos, la belleza de viajar en caravana es la libertad para
-        improvisar en el viaje, por eso y porque no me veo capacitado para
-        decirlo solo. No te vamos a dar un itinerario predefinido, pero sí
-        podemos darte estas propuestas
-      </p>
-      <h4>Navarra</h4>
-      <p>
-        ¡Viajar a Navarra en enero es una idea fantástica, incluso sin la
-        exuberancia de la Selva de Irati! Este mes te regala un paisaje invernal
-        único, con los Pirineos nevados ofreciendo rutas de senderismo mágicas y
-        miradores que te dejarán sin aliento. Además, es el momento perfecto
-        para disfrutar de sus encantadores pueblos, como Ochagavía o
-        Roncesvalles, sin las multitudes. Y no olvidemos su deliciosa
-        gastronomía. ¡Navarra en enero es tranquilidad, naturaleza y sabor en
-        cada esquina!
-      </p>
-      <h4>Granada</h4>
-      <p>
-        Granada en enero es una excelente opción para disfrutar de la
-        tranquilidad de sus pueblos blancos y la belleza natural de sus
-        paisajes. Los pueblos de la Alpujarra, rodeados de montañas y con su
-        arquitectura tradicional, ofrecen un refugio perfecto para escapar del
-        bullicio. Además, el invierno es una época ideal para explorar los
-        senderos de la Sierra Nevada, donde puedes disfrutar de la nieve y la
-        calma de la naturaleza. Las aguas termales de la zona también se
-        convierten en un aliciente perfecto para relajarte y disfrutar de un
-        bienestar único en un entorno espectacular
-      </p>
-    </div>
   </div>
-  }
-
-  <!-- <div>Iconos diseñados por <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.es/" title="Flaticon">www.flaticon.es</a></div> -->
 </div>
